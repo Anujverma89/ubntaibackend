@@ -22,7 +22,7 @@ def createUser(request):
         user = {
             "user_id" : request.POST.get('user_id'), 
             "email" : request.POST.get('email'),
-            "timestamp" :  datetime.utcnow().timestamp(),
+            "timestamp" :  datetime.now().timestamp(),
             "timezone" : request.POST.get('timezone'), 
             "profile_url" : request.POST.get("profile_url")
         }
