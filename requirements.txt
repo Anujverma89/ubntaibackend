@@ -5,6 +5,7 @@ annotated-types==0.7.0
 anyio==4.9.0
 asgiref==3.8.1
 attrs==25.3.0
+cachetools==5.5.2
 certifi==2025.4.26
 charset-normalizer==3.4.2
 cramjam==2.9.1
@@ -18,10 +19,16 @@ dnspython==2.7.0
 dotenv==0.9.9
 faiss-cpu==1.11.0
 filelock==3.18.0
+filetype==1.2.0
 frozenlist==1.6.0
 fsspec==2025.5.1
+google-ai-generativelanguage==0.6.18
+google-api-core==2.24.2
+google-auth==2.40.2
+googleapis-common-protos==1.70.0
 greenlet==3.2.2
-grpcio==1.71.0
+grpcio==1.73.0rc1
+grpcio-status==1.73.0rc1
 h11==0.16.0
 h2==4.2.0
 hf-xet==1.1.2
@@ -39,6 +46,8 @@ jsonpointer==3.0.0
 langchain==0.3.25
 langchain-community==0.3.24
 langchain-core==0.3.63
+langchain-google-genai==2.1.5
+langchain-qdrant==0.2.0
 langchain-text-splitters==0.3.8
 langgraph==0.4.7
 langgraph-checkpoint==2.0.26
@@ -73,8 +82,10 @@ packaging==24.2
 pillow==11.1.0
 portalocker==2.10.1
 propcache==0.3.1
+proto-plus==1.26.1
 protobuf==6.31.0
-psycopg2==2.9.10
+pyasn1==0.6.1
+pyasn1_modules==0.4.2
 pydantic==2.11.5
 pydantic-settings==2.9.1
 pydantic_core==2.33.2
@@ -89,6 +100,7 @@ qdrant-client==1.14.2
 regex==2024.11.6
 requests==2.32.3
 requests-toolbelt==1.0.0
+rsa==4.9.1
 safetensors==0.5.3
 scikit-learn==1.6.1
 scipy==1.15.3
