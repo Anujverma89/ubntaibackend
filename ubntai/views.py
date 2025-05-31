@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse, HttpResponseBadRequest,HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
-from . models import pastQuery
+from . models import pastQuery,errorFeedback
 from datetime import datetime
 import json
 import json
@@ -181,7 +181,30 @@ def troubleShoot(request):
 
 @csrf_exempt
 def add_error_report(request):
-    pass
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            error = data.get("error")
+            solution = data.get("solution")
+            status = data.get("status")
+
+            if not all([error, solution, status]):
+                return JsonResponse({"error": "Missing fields"}, status=400)
+
+            # Insert into MongoDB
+            document = {
+                "error": error,
+                "solution": solution,
+                "status": status
+            }
+            errorFeedback.insert_one(document)
+
+            return JsonResponse({"message": "Feedback saved successfully."})
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+    else:
+        return JsonResponse({"error": "Invalid HTTP method."}, status=405)
 
 
 @csrf_exempt

@@ -9,4 +9,5 @@ urlpatterns=[
     path("troubleshoot", views.troubleShoot),
     path("adderrorreport",views.add_error_report),
     path("addapplicationinfo", views.add_application_info),
+
 ]
